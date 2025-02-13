@@ -75,11 +75,11 @@ def main():
     prices = []
     categorized_items = {}
     categories = {
-    "Groceries": ["meat", "milk", "bread", "eggs", "cheese"],
-    "Home products": ["sofa", "lamp", "curtains", "vase", "shelves"],
-    "Electronics": ["laptop", "headphones", "smartphone", "camera", "tv"],
-    "Clothing": ["t-shirt", "jeans", "jacket", "socks", "hat"],
-    "Toys": ["lego set", "action figure", "doll", "puzzle", "bicycle"]
+    "Groceries":{"meat":3.00, "milk":4.00, "bread":2.00, "eggs":3.00, "cheese":1.00},
+    "Home products": {"sofa":1000.00, "lamp":150.00, "curtains":100.00, "vase":50.00, "shelves":250.0},
+    "Electronics": {"laptop":2000.00, "headphones":100.00, "smartphone":700.00, "camera":5000.00, "tv":1500.00},
+    "Clothing": {"t-shirt":20.00, "jeans":30.00, "jacket":40.00, "socks":10.00, "hat":35.00},
+    "Toys": {"lego set":50.00, "action figure":70.00, "doll": 35.00, "puzzle":7.99, "bicycle":269.99}
     }
     
     
