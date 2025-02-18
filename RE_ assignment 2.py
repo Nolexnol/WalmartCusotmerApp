@@ -64,6 +64,15 @@ def display_receipt(items,prices,p_tax,categorized_items):
     print("="*60)
     print(f"{'Tax':<20} |  ${tax:.2f}")
     print(f"{'Total':<20} |  ${total:.2f}")
+    addToDatabase(items, prices, categorized_items)
+
+def addToDatabase(items,prices,categorized_items):
+    file_path = r"C:\Users\dejhs\OneDrive\Desktop\DSALab\WalmartCusotmerApp\Storage.csv"
+    storage_file = open(file_path,"a+")
+    for item in items:
+        storage_file.write(item+",")
+    storage_file.close()
+
 
 def main():
     print("Welcome to Walmart. Please follow the instructions to make your shopping experience successful.")
