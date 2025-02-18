@@ -68,9 +68,14 @@ def display_receipt(items,prices,p_tax,categorized_items):
 
 def addToDatabase(items,prices,categorized_items):
     file_path = r"C:\Users\dejhs\OneDrive\Desktop\DSALab\WalmartCusotmerApp\Storage.csv"
-    storage_file = open(file_path,"a+")
+    storage_file = open(file_path,"w+")
+    storage_file.write("ITEM NAMES,")
     for item in items:
         storage_file.write(item+",")
+    storage_file.write('\n'+"PRICES,")
+    for price in prices:
+        storage_file.write(str(price)+",")
+    storage_file.write('\n')
     storage_file.close()
 
 
