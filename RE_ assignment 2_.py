@@ -1,5 +1,5 @@
 import csv
-
+from datetime import date
 # Gets the name of an item
 def get_item():
     while True:
@@ -39,14 +39,17 @@ def save_to_csv(categorized_items, shopper_id, tax, total):
     filename = r".\shopping_cart.csv"
     with open(filename, mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["ShopperID: %s"%(shopper_id)])
+        writer.writerow(["Transaction ID: %s"%(shopper_id)])
         writer.writerow(["Category", "Item", "Price"])
         for category, items in categorized_items.items():
             for item, price in items.items():
                 writer.writerow([category, item, price])
-        writer.writerow([])
         writer.writerow(["Tax", "", tax])
         writer.writerow(["Total", "", total])
+        writer.writerow([f"Transaction date: {date.today()}"])
+        writer.writerow(['---------------------------------------------------------------------'])
+        
+        
 
 # Displays receipt
 def display_receipt(categorized_items, shopper_id):

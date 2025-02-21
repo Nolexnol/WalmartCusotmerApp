@@ -1,12 +1,10 @@
-ShopperID: John
+Transaction ID: john
 Category,Item,Price
 Groceries,meat,3.0
 Groceries,milk,4.0
-Home products,vase,50.0
-Home products,sofa,1000.0
 Electronics,laptop,2000.0
-Clothing,t-shirt,20.0
-Toys,lego set,50.0
-
-Tax,,326.4588
-Total,,3453.4588
+Home products,vase,50.0
+Tax,,214.75080000000003
+Total,,2271.7508
+Transaction date: 2025-02-20
+---------------------------------------------------------------------
