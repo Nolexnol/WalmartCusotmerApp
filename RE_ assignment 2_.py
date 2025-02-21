@@ -1,5 +1,6 @@
 import csv
 from datetime import date
+from random import randint
 # Gets the name of an item
 def get_item():
     while True:
@@ -39,30 +40,31 @@ def save_to_csv(categorized_items, shopper_id, tax, total):
     filename = r".\shopping_cart.csv"
     with open(filename, mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["Transaction ID: %s"%(shopper_id)])
+        writer.writerow(["User ID","",shopper_id])
+        writer.writerow(['Transaction ID,','',randint(1,100000000000)])
         writer.writerow(["Category", "Item", "Price"])
         for category, items in categorized_items.items():
             for item, price in items.items():
                 writer.writerow([category, item, price])
         writer.writerow(["Tax", "", tax])
         writer.writerow(["Total", "", total])
-        writer.writerow([f"Transaction date: {date.today()}"])
+        writer.writerow([f"Transaction date","",date.today()])
         writer.writerow(['---------------------------------------------------------------------'])
-        
-        
+
 
 # Displays receipt
-def display_receipt(categorized_items, shopper_id):
+def display_receipt(categorized_items, shopper_id,categories):
     total = sum(sum(items.values()) for items in categorized_items.values())
     tax = total * 0.1044
     final_total = total + tax
     print("="*60)
-    print(f"{'Category':<20} | {'Item':<20} | {'Price'}")
+    print(f"{'Category':<20} | {'Item (Quantity)' :<20} | {'Price'}")
     print("-"*60)
     for category, values in categorized_items.items():
         print(f"{category:<20} |")
         for item, price in values.items():
-            print(f"{'':<20} | {item:<20} | ${price:.2f}")
+            unit_price = categories[category][item]
+            print(f"{'':<20} | {item+ f" ({int(price/unit_price)})":<20} | ${unit_price:.2f}")
         print("-"*60)
     print("="*60)
     print(f"{'Tax':<20} |  ${tax:.2f}")
@@ -71,7 +73,7 @@ def display_receipt(categorized_items, shopper_id):
 
 
 def main():
-    shopper_id = input("Enter your Shopper ID: ")
+    shopper_id = input("Enter a shopper ID: ")
     print("Welcome to Walmart. Please follow the instructions to make your shopping experience successful.")
     print("To remove an item from your list, enter 'rem'")
     print("Once you are done adding things to cart, leave blank and press 'Enter' to checkout")
@@ -110,7 +112,7 @@ def main():
             print("Item unavailable in the store")
             continue
     
-    display_receipt(categorized_items, shopper_id)
+    display_receipt(categorized_items, shopper_id,categories)
 
 if __name__ == "__main__":
     main()
