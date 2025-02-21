@@ -1,0 +1,45 @@
+User ID,,John
+"Transaction ID,",,76256749694
+Category,Item,Price
+Groceries,meat,3.0
+Groceries,milk,4.0
+Electronics,laptop,2000.0
+Tax,,209.5308
+Total,,2216.5308
+Transaction date,,2025-02-20
+---------------------------------------------------------------------
+User ID,,Noble
+"Transaction ID,",,69171461905
+Category,Item,Price
+Electronics,laptop,2000.0
+Electronics,headphones,100.0
+Groceries,cheese,1.0
+Home products,shelves,250.0
+Tax,,245.4444
+Total,,2596.4444
+Transaction date,,2025-02-20
+---------------------------------------------------------------------
+User ID,,Delight
+"Transaction ID,",,23204328612
+Category,Item,Price
+Groceries,meat,3.0
+Groceries,bread,2.0
+Toys,puzzle,7.99
+Toys,bicycle,269.99
+Toys,lego set,50.0
+Tax,,34.76311200000001
+Total,,367.743112
+Transaction date,,2025-02-20
+---------------------------------------------------------------------
+User ID,,Bruce
+"Transaction ID,",,4530738151
+Category,Item,Price
+Electronics,laptop,2000.0
+Clothing,socks,10.0
+Toys,doll,35.0
+Toys,action figure,70.0
+Home products,curtains,100.0
+Tax,,231.246
+Total,,2446.246
+Transaction date,,2025-02-20
+---------------------------------------------------------------------
